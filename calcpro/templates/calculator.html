@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="col-12">
+        <form method="POST" action="{% url 'calculator' %}">
+            {% csrf_token %}
+
+    </div>
+
+  <h1 style="margin-left: 500px;font-weight: bold;">Calculator</h1>
+
+    <div class="form-group">
+      <label>Number1</label>
+      <input type="text" class="form-control" name="num1"/><br>
+        <label>Operations</label>
+      <select name="oper" class="form-control">
+        <option value='+'>+</option>
+        <option value='-'>-</option>
+        <option value='*'>*</option>
+        <option value='/'>/</option>
+      </select><br>
+        <label>Number2</label>
+      <input type="text" class="form-control" name="num2"/>
+
+    <button type="submit">equals</button>
+        <br>
+
+        <label>result</label>
+      <input type="text" class="form-control" value="{{out}}"/>
+  </form>
+</div>
+</div>
+</body>
+</html>
